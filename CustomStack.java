@@ -7,24 +7,32 @@ import java.util.Objects;
 public class CustomStack<Item> implements Iterable<Item> {
     private Node head;
     private int size;
-
+/*
+* Constructor
+*/
     public CustomStack() {
         head = null;
         size = 0;
     }
-
+/*
+* To check is stack empty
+*/
     public boolean isEmpty() {
         return (size == 0);
     }
 
-
+/*
+* To pop / delete item
+*/
     public Item pop() {
         Item item = (Item) head.item;
         head = head.next;
         size--;
         return item;
     }
-
+/*
+*  To check whether item is present in stack
+*/
     public boolean contains(Item item){
         boolean checker=false;
         if(head==null)
@@ -39,6 +47,10 @@ public class CustomStack<Item> implements Iterable<Item> {
         }
         return checker;
     }
+    
+/*
+* To push / add item
+*/
     public void push(Item item) {
         Node oldHead = head;
         head = new Node();
@@ -47,10 +59,16 @@ public class CustomStack<Item> implements Iterable<Item> {
         size++;
     }
 
-
-    public int size() {
+/*
+* To get size
+*/
+      public int size() {
         return size;
     }
+    
+ /*
+* To get element presnet on top /peeked element
+*/
     public Item peek(){
         return (Item)head.item;
     }
@@ -62,6 +80,10 @@ public class CustomStack<Item> implements Iterable<Item> {
         }
         return temp;
     }
+    
+ /*
+* To reverse stack
+*/
     public void reverse() {
         int li = 0;
         int ri = size - 1;
@@ -79,7 +101,9 @@ public class CustomStack<Item> implements Iterable<Item> {
         }
     }
 
-
+/*
+* To traverse stack
+*/
     public void traverse() {
         myStack.Node<Item> temp = head;
         while (temp != null) {
@@ -88,7 +112,9 @@ public class CustomStack<Item> implements Iterable<Item> {
         }
         System.out.println();
     }
-
+/*
+* To get centered item in stack
+*/
     public Item center() {
         myStack.Node<Item> slow = head;
         myStack.Node<Item> fast = head;
